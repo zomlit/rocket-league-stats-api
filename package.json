@@ -1,0 +1,63 @@
+{
+  "name": "rocket-league-stats-api",
+  "version": "0.1.0",
+  "description": "TypeScript client for Rocket League's official Stats API (MatchStatsExporter). Connects over local TCP, frames the JSON stream, and emits fully typed events.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "example:capture": "tsx examples/capture.ts",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "rocket-league",
+    "stats-api",
+    "psyonix",
+    "esports",
+    "broadcast",
+    "overlay",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zomlit/rocket-league-stats-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zomlit/rocket-league-stats-api/issues"
+  },
+  "homepage": "https://github.com/zomlit/rocket-league-stats-api#readme",
+  "license": "MIT",
+  "author": "zomlit",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
